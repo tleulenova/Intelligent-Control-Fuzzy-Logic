@@ -1,0 +1,22 @@
+[PROJECT]
+Target=fuzzy.main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=fuzzy.main.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\Аяна Тлеуленова\Desktop\Intelligent Control\pic\fuzzy.main]
+Type=4
+[mru-list]
+1=fuzzy.main.c
+[Opened Files]
+1=fuzzy.main.c
+2=
+[fuzzy.main.c]
+Type=4
+[Units]
+Count=1
+1=fuzzy.main (main)

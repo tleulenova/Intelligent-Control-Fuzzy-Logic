@@ -1,0 +1,215 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     lcdlat
+008     PSP_DATA
+008     lcd
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-023 temperature
+024-027 load
+028-029 result_1
+02A-02B result_2
+02C-02E SelectMatrixAndRowAndColumn.matrixAndRowAndColumn
+02F     @TRIS_C
+030-033 atan2.y
+030-031 MAIN.matrixAndRowAndColumn
+032-035 MAIN.fuzzyOut
+034-037 atan2.x
+036-039 MAIN.mypwm
+038-03B atan2.z
+03A-03D SelectMatrixAndRowAndColumn._temperature
+03A     @PSTRINGCN7_792.P1
+03A     lcd_init.i
+03A-03D @PRINTF_L32D_792FPFPF.P1
+03A     MAIN.@SCRATCH1
+03B     lcd_init.@SCRATCH1
+03B     MAIN.@SCRATCH2
+03B     @PSTRINGCN7_792.@SCRATCH1
+03C.0   atan2.sign
+03C     MAIN.@SCRATCH3
+03C     @PSTRINGCN7_792.@SCRATCH2
+03D     GetDataAndInterpolate._matrix
+03D     atan2.quad
+03D     MAIN.@SCRATCH4
+03D     @PSTRINGCN7_792.@SCRATCH3
+03E-041 SelectMatrixAndRowAndColumn._load
+03E     GetDataAndInterpolate._row
+03E     @PRINTF_L32D_792FPFPF.P1
+03E     @PSTRINGCN7_792.@SCRATCH4
+03F     GetDataAndInterpolate._column
+03F     @PRINTF_L32D_792FPFPF.@SCRATCH1
+040-043 GetDataAndInterpolate._temperature
+040     @PRINTF_L32D_792FPFPF.@SCRATCH2
+041     @PRINTF_L32D_792FPFPF.@SCRATCH3
+042     SelectMatrixAndRowAndColumn.matrixNumber
+042     @PRINTF_L32D_792FPFPF.@SCRATCH4
+043     SelectMatrixAndRowAndColumn.rowNumber
+043     @PRINTF_L32D_792FPFPF.@SCRATCH5
+044     SelectMatrixAndRowAndColumn.columnNumber
+044-047 GetDataAndInterpolate._load
+044     @PRINTF_L32D_792FPFPF.@SCRATCH6
+045     SelectMatrixAndRowAndColumn.@SCRATCH1
+045     @PRINTF_L32D_792FPFPF.@SCRATCH7
+046     @DIV88.P1
+046     @PRINTF_L32D_792FPFPF.@SCRATCH8
+047-04A @DIV3232.P1
+047     @DIV88.P2
+047     lcd_putc.c
+047-04A @FTOSD.P1
+048     @delay_ms1.P1
+048     lcd_gotoxy.x
+048     GetDataAndInterpolate.data1
+048     @DIV88.@SCRATCH1
+049     lcd_gotoxy.y
+049     GetDataAndInterpolate.data2
+04A     GetDataAndInterpolate.data3
+04A     lcd_gotoxy.address
+04B     GetDataAndInterpolate.data4
+04B-04E @DIV3232.P1
+04B     lcd_gotoxy.@SCRATCH1
+04B     @FTOSD.@SCRATCH1
+04C-04F GetDataAndInterpolate.interpolatedData
+04C     lcd_send_byte.address
+04D     lcd_send_byte.n
+04E     lcd_read_byte.low
+04E     lcd_send_byte.@SCRATCH1
+04F     lcd_send_nibble.n
+04F     lcd_read_byte.high
+04F     @DIV3232.@SCRATCH1
+050-053 GetDataAndInterpolate.x1
+050     lcd_read_byte.@SCRATCH1
+050     @DIV3232.@SCRATCH2
+051     @DIV3232.@SCRATCH3
+052     @DIV3232.@SCRATCH4
+053     @DIV3232.@SCRATCH5
+054-057 GetDataAndInterpolate.x2
+058-05B GetDataAndInterpolate.y1
+05C-05F GetDataAndInterpolate.y2
+060-063 GetDataAndInterpolate.fx_y1
+064-067 GetDataAndInterpolate.fx_y2
+068-06B @SFTOI.P1
+068     GetDataAndInterpolate.@SCRATCH1
+069     GetDataAndInterpolate.@SCRATCH2
+06A     @MUL88.P1
+06A     GetDataAndInterpolate.@SCRATCH3
+06B     @MUL88.P1
+06B     GetDataAndInterpolate.@SCRATCH4
+06C     GetDataAndInterpolate.@SCRATCH5
+06D     GetDataAndInterpolate.@SCRATCH6
+06E     GetDataAndInterpolate.@SCRATCH7
+06F     GetDataAndInterpolate.@SCRATCH8
+070-073 @DIVFF.P1
+070-071 @ITOF.P2
+070-073 @ADDFF.P3
+070-073 @MULFF.P4
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B-07E @ADDFF.P1
+07B-07E @MULFF.P2
+07B-07E @DIVFF.P3
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+0A0     @MULFF.@SCRATCH1
+0A0     @ADDFF.@SCRATCH1
+0A0     @DIVFF.@SCRATCH1
+0A1     @MULFF.@SCRATCH2
+0A1     @ADDFF.@SCRATCH2
+0A1     @DIVFF.@SCRATCH2
+0A2     @MULFF.@SCRATCH3
+0A2     @ADDFF.@SCRATCH3
+0A2     @DIVFF.@SCRATCH3
+0A3     @MULFF.@SCRATCH4
+0A3     @ADDFF.@SCRATCH4
+0A3     @DIVFF.@SCRATCH4
+0A4     @MULFF.@SCRATCH5
+0A4     @ADDFF.@SCRATCH5
+0A4     @DIVFF.@SCRATCH5
+0A5     @ADDFF.@SCRATCH6
+0A5     @DIVFF.@SCRATCH6
+0A6     @ADDFF.@SCRATCH7
+0A7     @ADDFF.@SCRATCH8
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000008  LCD_INIT_STRING.data
+00000C  oneTo6th.call
+000013  oneTo6th.data
+000109  seventhTo12th.call
+000110  seventhTo12th.data
+000206  thirteenthTo18th.call
+00020A  thirteenthTo18th.data
+000300  nineteenthTo24th.call
+000304  nineteenthTo24th.data
+0003FA  twentyfifthTo30th.call
+000402  twentyfifthTo30th.data
+0004F8  thirtyseventhTo42nd.call
+000502  thirtyseventhTo42nd.data
+0005CF  @const879.call
+0005D8  @delay_ms1
+0005EC  lcd_send_nibble
+0005FD  lcd_read_nibble
+000603  lcd_send_byte
+000609  lcd_read_byte
+000645  lcd_init
+000678  @ITOF
+000695  @MULFF
+00071B  @SFTOI
+00073A  @DIV88
+00074F  SelectMatrixAndRowAndColumn
+0007BF  @MUL88
+0007E4  lcd_gotoxy
+000800  @ADDFF
+000943  @DIVFF
+000A1C  GetDataAndInterpolate
+000F6F  lcd_putc
+000FA7  @DIV3232
+001000  @PRINTF_L32D_792FPFPF
+001029  @FTOSD
+0010FA  @PSTRINGCN7_792
+001158  MAIN
+001158  @cinit1
+001171  @cinit2
+
+Project Directory:
+    C:\Users\ј€на “леуленова\Desktop\Intelligent Control\pic\
+
+Project Files:
+    fuzzy.main.c                                            [25-май-22 03:17  CRC=C5D0309D]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [21-июн-13 16:04  CRC=4E65664C]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h  [28-сен-12 11:35  CRC=546412C9]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c   [23-авг-12 09:01  CRC=D28E8746]
+
+Source signature=0DB6B83E
+
+Units:
+    fuzzy.main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   fuzzy.main.xsym
+    Errors:      fuzzy.main.err
+    Ext Symbols: fuzzy.main.esym
+    INHX8:       fuzzy.main.hex
+    Symbols:     fuzzy.main.sym
+    List:        fuzzy.main.lst
+    Debug/COFF:  fuzzy.main.cof
+    Project:     fuzzy.main.ccspjt
+    Call Tree:   fuzzy.main.tre
+    Statistics:  fuzzy.main.STA

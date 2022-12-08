@@ -1,0 +1,264 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028-02B temperature
+02C-02F prevTemperature
+030-033 deltaTemperature
+034-035 i
+036-039 T0
+03A-03B result_1
+03C-03E SelectMatrixAndRowAndColumn.matrixAndRowAndColumn
+03F     @TRIS_C
+040-041 MAIN.matrixAndRowAndColumn
+040-043 atan2.y
+042-045 MAIN.fuzzyOut
+044-047 atan2.x
+046     MAIN.mypwm
+047-04A TemperatureSensor.RT
+047     @PRINTF_U_9600_62_63.P1
+047     @delay_ms1.P2
+047-04A SelectMatrixAndRowAndColumn._temperature
+047     @PSTRINGCN7_9600_62_63.P1
+047-04A @PRINTF_L32D_9600_62_63FPFPF.P2
+047     MAIN.@SCRATCH1
+048     @PRINTF_U_9600_62_63.P1
+048-04B atan2.z
+048     MAIN.@SCRATCH2
+048     @PSTRINGCN7_9600_62_63.@SCRATCH1
+049     MAIN.@SCRATCH3
+049     @PSTRINGCN7_9600_62_63.@SCRATCH2
+04A     GetDataAndInterpolate._matrix
+04A     @PSTRINGCN7_9600_62_63.@SCRATCH3
+04B     GetDataAndInterpolate._row
+04B-04E SelectMatrixAndRowAndColumn._deltaTemperature
+04B     @PRINTF_L32D_9600_62_63FPFPF.P1
+04B-04E TemperatureSensor.VR
+04B     @PSTRINGCN7_9600_62_63.@SCRATCH4
+04C.0   atan2.sign
+04C     GetDataAndInterpolate._column
+04C     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH1
+04D     atan2.quad
+04D-050 GetDataAndInterpolate._temperature
+04D     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH2
+04E     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH3
+04F-052 TemperatureSensor.ln
+04F     SelectMatrixAndRowAndColumn.matrixNumber
+04F     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH4
+050     SelectMatrixAndRowAndColumn.rowNumber
+050     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH5
+051-054 GetDataAndInterpolate._deltaTemperature
+051     SelectMatrixAndRowAndColumn.columnNumber
+051     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH6
+052     SelectMatrixAndRowAndColumn.@SCRATCH1
+052     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH7
+053-056 TemperatureSensor.VRT
+053     @DIV88.P1
+053     SelectMatrixAndRowAndColumn.@SCRATCH2
+053     @PRINTF_L32D_9600_62_63FPFPF.@SCRATCH8
+054-057 @DIV3232.P1
+054-057 @FTOSD.P2
+054     @DIV88.P3
+054     SelectMatrixAndRowAndColumn.@SCRATCH3
+055     GetDataAndInterpolate.data1
+055     @DIV88.@SCRATCH1
+055     SelectMatrixAndRowAndColumn.@SCRATCH4
+056     GetDataAndInterpolate.data2
+057-05A TemperatureSensor._temperature
+057     GetDataAndInterpolate.data3
+058-05B @DIV3232.P1
+058     GetDataAndInterpolate.data4
+058     @FTOSD.@SCRATCH1
+059-05C GetDataAndInterpolate.interpolatedData
+05B     TemperatureSensor.@SCRATCH1
+05C     TemperatureSensor.@SCRATCH2
+05C     @DIV3232.@SCRATCH1
+05D-060 GetDataAndInterpolate.x1
+05D     TemperatureSensor.@SCRATCH3
+05D     @DIV3232.@SCRATCH2
+05E     TemperatureSensor.@SCRATCH4
+05E     @DIV3232.@SCRATCH3
+05F-062 log.x
+05F     @DIV3232.@SCRATCH4
+060     @DIV3232.@SCRATCH5
+061-064 GetDataAndInterpolate.x2
+063-066 log.y
+065-068 GetDataAndInterpolate.y1
+067-06A log.res
+069-06C GetDataAndInterpolate.y2
+06B-06E log.r
+06D-070 GetDataAndInterpolate.fx_y1
+06F-072 log.y2
+071-074 GetDataAndInterpolate.fx_y2
+073     log.n
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B-07E @FLT.P1
+07B-07C @SITOF.P2
+07B     log.@SCRATCH1
+07C     log.@SCRATCH2
+07D     log.@SCRATCH3
+07E     log.@SCRATCH4
+07F     @INTERRUPT_AREA
+09C.6   C1OUT
+09C.7   C2OUT
+0A0-0A3 @FLT.P1
+0A0-0A3 @SFTOI.P2
+0A0     GetDataAndInterpolate.@SCRATCH1
+0A1     GetDataAndInterpolate.@SCRATCH2
+0A2     @MUL88.P1
+0A2     GetDataAndInterpolate.@SCRATCH3
+0A3     @MUL88.P1
+0A3     GetDataAndInterpolate.@SCRATCH4
+0A4     @FLT.@SCRATCH1
+0A4     GetDataAndInterpolate.@SCRATCH5
+0A5     @FLT.@SCRATCH2
+0A5     GetDataAndInterpolate.@SCRATCH6
+0A6     GetDataAndInterpolate.@SCRATCH7
+0A7     GetDataAndInterpolate.@SCRATCH8
+0A8-0AB @DIVFF.P1
+0A8-0AB @MULFF.P2
+0A8-0A9 @ITOF.P3
+0AC-0AF @MULFF.P1
+0AC-0AF @DIVFF.P2
+0B0     @MULFF.@SCRATCH1
+0B0     @DIVFF.@SCRATCH1
+0B1     @MULFF.@SCRATCH2
+0B1     @DIVFF.@SCRATCH2
+0B2     @MULFF.@SCRATCH3
+0B2     @DIVFF.@SCRATCH3
+0B3     @MULFF.@SCRATCH4
+0B3     @DIVFF.@SCRATCH4
+0B4     @MULFF.@SCRATCH5
+0B4     @DIVFF.@SCRATCH5
+0B5     @DIVFF.@SCRATCH6
+0BB-0BE @ADDFF.P1
+0BF-0C2 @ADDFF.P1
+0C3     @ADDFF.@SCRATCH1
+0C4     @ADDFF.@SCRATCH2
+0C5     @ADDFF.@SCRATCH3
+0C6     @ADDFF.@SCRATCH4
+0C7     @ADDFF.@SCRATCH5
+0C8     @ADDFF.@SCRATCH6
+0C9     @ADDFF.@SCRATCH7
+0CA     @ADDFF.@SCRATCH8
+0FF     @INTERRUPT_AREA
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00002F  oneTo6th.call
+000036  oneTo6th.data
+00012C  seventhTo12th.call
+000133  seventhTo12th.data
+000229  thirteenthTo18th.call
+000230  thirteenthTo18th.data
+000326  nineteenthTo24th.call
+00032D  nineteenthTo24th.data
+000423  twentyfifthTo30th.call
+00042A  twentyfifthTo30th.data
+000520  thirtyseventhTo42nd.call
+000524  thirtyseventhTo42nd.data
+0005F1  @ADDFF
+000737  tmr_int
+00077A  @const852.call
+000786  @delay_ms1
+00079A  @ITOF
+0007B9  @SITOF
+0007DE  @SFTOI
+000800  @MULFF
+000877  @DIVFF
+000943  TemperatureSensor
+000A08  log
+000A1E  @FLT
+000D33  @DIV88
+000D48  SelectMatrixAndRowAndColumn
+000E0E  @MUL88
+000E35  @DIV3232
+000E84  @PRINTF_L32D_9600_62_63FPFPF
+000EB3  @FTOSD
+000F70  @PSTRINGCN7_9600_62_63
+000FC6  @PRINTF_U_9600_62_63
+001000  GetDataAndInterpolate
+001800  MAIN
+001800  @cinit1
+001827  @cinit2
+
+Project Directory:
+    C:\Users\ј€на “леуленова\Desktop\Intelligent Control\piic\
+
+Project Files:
+    main.c                                                  [25-май-22 05:25  CRC=A0E74A42]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [21-июн-13 16:04  CRC=4E65664C]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h  [28-сен-12 11:35  CRC=546412C9]
+
+Source signature=9814D620
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
